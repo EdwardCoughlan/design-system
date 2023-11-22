@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@edwardcoughlan/design-system-tailwind-configuration": [
+        "packages/tailwind-configuration/src/index.ts"
+      ],
+      "ui-viewer": ["packages/ui-viewer/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
