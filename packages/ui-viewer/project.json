@@ -12,22 +12,6 @@
         "lintFilePatterns": ["packages/ui-viewer/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/packages/ui-viewer"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
-      }
-    },
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {

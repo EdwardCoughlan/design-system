@@ -2,7 +2,11 @@
   "name": "design-system",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "storybook": "npx nx run ui-viewer:storybook",
+    "build-storybook": "npx nx run ui-viewer:build-storybook",
+    "build": "npx nx run-many --target=build"
+  },
   "private": true,
   "devDependencies": {
     "@nx/cypress": "17.1.3",
