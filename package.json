@@ -5,7 +5,8 @@
   "scripts": {
     "storybook": "npx nx run ui-viewer:storybook",
     "build-storybook": "npx nx run ui-viewer:build-storybook",
-    "build": "npx nx run-many --target=build"
+    "build": "npx nx run-many --target=build",
+    "lint": "npx nx run-many --target=lint"
   },
   "private": true,
   "devDependencies": {
@@ -64,6 +65,7 @@
   },
   "dependencies": {
     "@swc/helpers": "~0.5.2",
+    "clsx": "^2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0"

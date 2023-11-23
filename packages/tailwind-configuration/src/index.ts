@@ -1,1 +1,2 @@
-export * from './lib/tailwind-configuration';
+import './index.css';
+export { tailwindConfiguration } from './lib/tailwind-configuration';

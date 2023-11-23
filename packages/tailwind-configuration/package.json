@@ -2,7 +2,16 @@
   "name": "@edwardcoughlan/design-system-tailwind-configuration",
   "version": "0.0.1",
   "dependencies": {},
+  "peerDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
   "main": "./index.js",
   "module": "./index.mjs",
-  "typings": "./index.d.ts"
+  "typings": "./index.d.ts",
+  "style": "index.css",
+  "exports": {
+    "./styles.css": {
+      "import": "./styles.css"
+    }
+  }
 }

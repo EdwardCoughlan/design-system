@@ -2,6 +2,10 @@
   "name": "@edwardcoughlan/design-system-button",
   "version": "0.0.1",
   "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "clsx": "2.0.0"
+  },
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
