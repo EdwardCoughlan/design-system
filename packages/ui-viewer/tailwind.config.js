@@ -20,5 +20,5 @@ module.exports = {
       ...tailwindConfiguration.theme.extend
     },
   },
-  plugins: [],
+  plugins: [...tailwindConfiguration.plugins],
 };
