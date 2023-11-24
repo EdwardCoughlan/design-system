@@ -1,1 +1,2 @@
-export * from './lib/typography';
+export * from './lib/typography-heading';
+export * from './lib/typography-body';
