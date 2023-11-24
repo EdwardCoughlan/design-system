@@ -21,6 +21,9 @@
       "@edwardcoughlan/design-system-tailwind-configuration": [
         "packages/tailwind-configuration/src/index.ts"
       ],
+      "@edwardcoughlan/design-system-typography": [
+        "packages/react/typography/src/index.ts"
+      ],
       "ui-viewer": ["packages/ui-viewer/src/index.ts"]
     }
   },

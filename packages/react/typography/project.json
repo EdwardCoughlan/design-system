@@ -1,7 +1,7 @@
 {
-  "name": "button",
+  "name": "typography",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/react/button/src",
+  "sourceRoot": "packages/react/typography/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,7 +9,7 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/react/button/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/react/typography/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
@@ -17,7 +17,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/react/button"
+        "outputPath": "dist/packages/react/typography"
       },
       "configurations": {
         "development": {
