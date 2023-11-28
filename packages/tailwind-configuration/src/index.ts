@@ -1,1 +1,1 @@
-export { tailwindConfiguration } from './lib/tailwind-configuration';
+export { lgcTailwindPlugin } from './lib/tailwind-configuration';
