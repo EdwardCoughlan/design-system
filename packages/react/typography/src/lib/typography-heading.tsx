@@ -13,6 +13,7 @@ export const TypograhpyHeading: FC<PropsWithChildren<HeadingProps>> = ({
   as,
   children,
   level,
+  className,
   ...props
 }) => {
   const ElementType: React.ElementType = as;
@@ -21,14 +22,18 @@ export const TypograhpyHeading: FC<PropsWithChildren<HeadingProps>> = ({
     return (
       <div
         role="heading"
-        className={clsx({
-          'text-heading-2xl': level === '2xl',
-          'text-heading-xl': level === 'xl',
-          'text-heading-lg': level === 'lg',
-          'text-heading-md': level === 'md',
-          'text-heading-sm': level === 'sm',
-          'text-heading-xs': level === 'xs',
-        })}
+        aria-level={0}
+        className={clsx(
+          {
+            'text-heading-2xl': level === '2xl',
+            'text-heading-xl': level === 'xl',
+            'text-heading-lg': level === 'lg',
+            'text-heading-md': level === 'md',
+            'text-heading-sm': level === 'sm',
+            'text-heading-xs': level === 'xs',
+          },
+          className
+        )}
         {...props}
       >
         {children}
@@ -38,14 +43,17 @@ export const TypograhpyHeading: FC<PropsWithChildren<HeadingProps>> = ({
 
   return (
     <ElementType
-      className={clsx({
-        'text-heading-2xl': level === '2xl',
-        'text-heading-xl': level === 'xl',
-        'text-heading-lg': level === 'lg',
-        'text-heading-md': level === 'md',
-        'text-heading-sm': level === 'sm',
-        'text-heading-xs': level === 'xs',
-      })}
+      className={clsx(
+        {
+          'text-heading-2xl': level === '2xl',
+          'text-heading-xl': level === 'xl',
+          'text-heading-lg': level === 'lg',
+          'text-heading-md': level === 'md',
+          'text-heading-sm': level === 'sm',
+          'text-heading-xs': level === 'xs',
+        },
+        className
+      )}
       {...props}
     >
       {children}

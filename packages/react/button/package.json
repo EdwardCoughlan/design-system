@@ -2,7 +2,9 @@
   "name": "@edwardcoughlan/design-system-button",
   "version": "0.0.1",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@edwardcoughlan/design-system-typography": "workspace:*"
+  },
   "peerDependencies": {
     "clsx": "2.0.0"
   },

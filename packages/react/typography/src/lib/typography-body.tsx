@@ -25,6 +25,7 @@ export const TypographyBody: FC<PropsWithChildren<TypographyBody>> = ({
   as,
   level,
   children,
+  className,
   ...props
 }) => {
   if (as === 'div') {
@@ -34,6 +35,15 @@ export const TypographyBody: FC<PropsWithChildren<TypographyBody>> = ({
           AllHTMLAttributes<HTMLDivElement>,
           HTMLDivElement
         >)}
+        className={clsx(
+          {
+            'text-body-lead': level === 'body-lead',
+            'text-body-md': level === 'body-md',
+            'text-body-sm': level === 'body-sm',
+            'text-body-xs': level === 'body-xs',
+          },
+          className
+        )}
       >
         {children}
       </div>
@@ -43,12 +53,15 @@ export const TypographyBody: FC<PropsWithChildren<TypographyBody>> = ({
 
   return (
     <ElementType
-      className={clsx({
-        'text-body-lead': level === 'body-lead',
-        'text-body-md': level === 'body-md',
-        'text-body-sm': level === 'body-sm',
-        'text-body-xs': level === 'body-xs',
-      })}
+      className={clsx(
+        {
+          'text-body-lead': level === 'body-lead',
+          'text-body-md': level === 'body-md',
+          'text-body-sm': level === 'body-sm',
+          'text-body-xs': level === 'body-xs',
+        },
+        className
+      )}
       {...props}
     >
       {children}
