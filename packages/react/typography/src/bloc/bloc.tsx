@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-'use client';
 import {
-  createElement,
   type FC,
   createContext,
   type PropsWithChildren,
@@ -12,7 +9,7 @@ import type { ComponentMapper, ComponentMapperType } from './types';
 
 export type BlocProps = {
   id: string;
-  props?: unknown;
+  props?: Record<string | number | symbol, unknown>;
   identifier: string;
   componentMappers?: ComponentMapperType;
 };
@@ -41,7 +38,7 @@ export const Bloc: FC<BlocProps> = ({
   const componentProps =
     componentMapper.mapper === undefined
       ? props
-      : componentMapper.mapper(props || {});
+      : componentMapper.mapper(props);
 
   componentMapper.component.displayName = identifier;
   const Component = componentMapper.component;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { FunctionComponent, ComponentClass } from 'react';
 
 export type ComponentMapperType = {
@@ -5,8 +6,6 @@ export type ComponentMapperType = {
 };
 
 export type ComponentMapper = {
-  component:
-    | FunctionComponent<NonNullable<unknown>>
-    | ComponentClass<NonNullable<unknown>>;
-  mapper?: (props: NonNullable<unknown>) => NonNullable<unknown>;
+  component: FunctionComponent<any> | ComponentClass<any>; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mapper?: (props?: any) => any;
 };
