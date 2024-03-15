@@ -43,7 +43,7 @@ export const Bloc: FC<BlocProps> = ({
 
   if ('loader' in ComponentMapper) {
     return (
-      <Suspense fallback={ComponentMapper.loader}>
+      <Suspense fallback={ComponentMapper.loader} key={id}>
         <ComponentMapper.Component key={id} {...(componentProps || {})} />
       </Suspense>
     );
