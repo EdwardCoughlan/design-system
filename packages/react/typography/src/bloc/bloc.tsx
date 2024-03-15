@@ -4,7 +4,6 @@ import {
   type PropsWithChildren,
   useContext,
   Suspense,
-  lazy,
 } from 'react';
 import BlocStorage from './blocStorage';
 import type { ComponentMapper, ComponentMapperType } from './types';
