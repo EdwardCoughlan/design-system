@@ -44,10 +44,9 @@ export const Bloc: FC<BlocProps> = ({
       : componentMapper.mapper(props || {});
 
   componentMapper.component.displayName = identifier;
-  return createElement(componentMapper.component, {
-    ...(componentProps || {}),
-    key: id,
-  });
+  const Component = componentMapper.component;
+
+  return <Component key={id} {...(componentProps || {})} />;
 };
 
 export const BlocProvider: FC<
