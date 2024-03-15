@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type {
   FunctionComponent,
   ComponentClass,
@@ -10,13 +9,19 @@ export type ComponentMapperType = {
   [key: string]: ComponentMapper;
 };
 
-export type ComponentMapper =
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ComponentMapper<T = any> = {
+  type: 'default' | 'lazy';
+  loader?: ReactElement | string | number;
+  mapper?: (props?: T) => T;
+} & (
   | {
-      Component: FunctionComponent<any> | ComponentClass<any>;
-      mapper?: (props?: any) => any;
+      type: 'default';
+      Component: FunctionComponent<T> | ComponentClass<T>;
     }
   | {
-      Component: ExoticComponent<any>;
-      mapper?: (props?: any) => any;
+      type: 'lazy';
+      Component: ExoticComponent<T>;
       loader: ReactElement | string | number;
-    };
+    }
+);

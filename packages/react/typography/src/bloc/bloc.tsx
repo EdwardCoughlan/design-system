@@ -4,6 +4,7 @@ import {
   type PropsWithChildren,
   useContext,
   Suspense,
+  lazy,
 } from 'react';
 import BlocStorage from './blocStorage';
 import type { ComponentMapper, ComponentMapperType } from './types';
@@ -41,7 +42,7 @@ export const Bloc: FC<BlocProps> = ({
       ? props
       : ComponentMapper.mapper(props);
 
-  if ('loader' in ComponentMapper) {
+  if (ComponentMapper.type === 'lazy') {
     return (
       <Suspense fallback={ComponentMapper.loader} key={id}>
         <ComponentMapper.Component key={id} {...(componentProps || {})} />
