@@ -3,6 +3,7 @@ import {
   createContext,
   type PropsWithChildren,
   useContext,
+  Suspense,
 } from 'react';
 import BlocStorage from './blocStorage';
 import type { ComponentMapper, ComponentMapperType } from './types';
@@ -23,12 +24,12 @@ export const Bloc: FC<BlocProps> = ({
   componentMappers,
 }: BlocProps) => {
   const bc = useContext(BlocContext);
-  const componentMapper =
+  const ComponentMapper =
     componentMappers && componentMappers[identifier]
       ? componentMappers[identifier]
       : bc.getComponent(identifier);
 
-  if (componentMapper === undefined) {
+  if (ComponentMapper === undefined) {
     console.error(
       `Component not added to component mapper ${identifier}. Try adding it or creating it.`
     );
@@ -36,14 +37,18 @@ export const Bloc: FC<BlocProps> = ({
   }
 
   const componentProps =
-    componentMapper.mapper === undefined
+    ComponentMapper.mapper === undefined
       ? props
-      : componentMapper.mapper(props);
+      : ComponentMapper.mapper(props);
 
-  componentMapper.component.displayName = identifier;
-  const Component = componentMapper.component;
-
-  return <Component key={id} {...(componentProps || {})} />;
+  if ('loader' in ComponentMapper) {
+    return (
+      <Suspense fallback={ComponentMapper.loader}>
+        <ComponentMapper.Component key={id} {...(componentProps || {})} />
+      </Suspense>
+    );
+  }
+  return <ComponentMapper.Component key={id} {...(componentProps || {})} />;
 };
 
 export const BlocProvider: FC<
